@@ -4,11 +4,13 @@
 <title>toDoList</title>
 </head>
 <script>
+    let curr_id = 0;
     function addItem(){
         let task = document.createElement('div');
         task.style.cssText = 'width: 500px; height: 150px; background-color: green; position: absolute';
-        task.id = "k";
+        task.id = curr_id.toString();
         document.body.appendChild(task);
+        curr_id = curr_id + 1;
     }
 </script>
 <body>
