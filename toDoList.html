@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>toDoList</title>
+</head>
+<script>
+    function addItem(){
+        let task = document.createElement('div');
+        task.style.cssText = 'width: 500px; height: 150px; background-color: green; position: absolute';
+        task.id = "k";
+        document.body.appendChild(task);
+    }
+</script>
+<body>
+    <button onclick="addItem()">add task</button>
+</body>
+</html> 
