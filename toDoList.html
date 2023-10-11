@@ -9,14 +9,15 @@
 <script type="text/babel">
     let curr_id = 0;
     function addItem(){
-        let task = <div id = curr_id.toString() > width: 500px; height: 150px; background-color: green; position: absolute </div>;
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(task)
+        let task = document.createElement('div');
+        task.style.cssText="width: 500px; height: 150px; background-color: green; position: absolute";
+        task.id=curr_id.toString();
+        task.innerHTML="-";
+        document.body.appendChild(task);
         curr_id = curr_id + 1;
     }
 </script>
 <body>
     <button onclick="addItem()">add task</button>
-    <p id='root'></p>
 </body>
 </html> 
