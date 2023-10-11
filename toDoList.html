@@ -2,19 +2,17 @@
 <html>
 <head>
 <title>toDoList</title>
-<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<script type="text/babel">
+<script>
     let curr_id = 0;
     let pos = 30;
     function addItem(){
         let task = document.createElement('div');
+        let task_value = document.getElementById("taskName").value;
         task.style.cssText="width: 500px; height: 150px; background-color: green; position: absolute";
         task.style.cssText+="top: " + pos.toString() + "px";
         task.id=curr_id.toString();
-        task.innerHTML="-";
+        task.innerHTML=task_value;
         document.body.appendChild(task);
         curr_id = curr_id + 1;
         pos = pos + 170;
@@ -22,5 +20,6 @@
 </script>
 <body>
     <button onclick="addItem()">add task</button>
+    <input id="taskName"></input>
 </body>
 </html> 
