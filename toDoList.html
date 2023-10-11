@@ -8,13 +8,16 @@
 </head>
 <script type="text/babel">
     let curr_id = 0;
+    let pos = 30;
     function addItem(){
         let task = document.createElement('div');
         task.style.cssText="width: 500px; height: 150px; background-color: green; position: absolute";
+        task.style.cssText+="top: " + pos.toString() + "px";
         task.id=curr_id.toString();
         task.innerHTML="-";
         document.body.appendChild(task);
         curr_id = curr_id + 1;
+        pos = pos + 170;
     }
 </script>
 <body>
