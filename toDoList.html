@@ -5,7 +5,7 @@
 </head>
 <script>
     let curr_id = 0;
-    let pos = 30;
+    let pos = 50;
     let colors = ["lightgreen", "lightblue", "lavender", "lightpink", "lemonchiffon", "lightcyan", "thistle", "khaki"];
     function addItem(){
         let task = document.createElement('div');
@@ -20,6 +20,7 @@
     }
 </script>
 <body>
+    <h2>My To-Do List</h2>
     <img src="plus.png" onclick="addItem()" style="width:50px; position:fixed; bottom:20px; right:20px">
     <textarea id="taskName"style="height:70px;width:200px;position:fixed; bottom:20px; right:80px;"placeholder="enter task"></textarea>
 </body>
