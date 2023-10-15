@@ -23,10 +23,9 @@
     function addItem(){
         let task = document.createElement('div');
         let task_value = document.getElementById("taskName").value;
-        task.style.cssText=" background-color:" + colors[curr_id % 8]+";";
-        task.style.cssText+="top: " + pos.toString() + "px";
+        task.style.cssText=` background-color:${colors[curr_id % 8]}; top:${pos.toString()}px`;
         task.id=curr_id.toString();
-        task.innerHTML=task_value + "<input type='checkbox' id = 'check" + task.id + "'style='position:absolute; top:10px; right:10px;width:20px;height:20px'></input>";  
+        task.innerHTML=task_value + `<input type='checkbox' id = 'check${task.id}' style='position:absolute; top:10px; right:10px;width:20px;height:20px'></input>`;  
         task.ondblclick = function (){
             if(confirm("are you sure you want to remove task?")){
                 removeElement(task.id);
@@ -54,8 +53,8 @@
     function addToCompleted(id){
         let task = document.getElementById(id);
         let completed_task = document.createElement('div');
-        completed_task.innerText = "- "  + task.innerText;
-        completed_task.style.cssText = "top:" + completed_pos + "px;right:200px";
+        completed_task.innerText = `- ${task.innerText}`;
+        completed_task.style.cssText = `top: ${completed_pos}px;right:200px`;
         document.body.appendChild(completed_task);
         completed_pos = completed_pos + 30;
     }
@@ -67,7 +66,7 @@
             let below_task = document.getElementById(below_task_id);
             if(below_task){
                 let curr_top = parseInt(below_task.style.top, 10);
-                below_task.style.top = (curr_top - 170).toString() + "px" ; 
+                below_task.style.top = `${(curr_top - 170).toString()}px` ; 
             }
         }
     }
