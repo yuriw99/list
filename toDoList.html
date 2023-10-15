@@ -18,6 +18,7 @@
     let curr_id = 0;
     let pos = 50;
     let completed = 0;
+    let completed_pos = 50;
     let colors = ["lightgreen", "lightblue", "lavender", "lightpink", "lemonchiffon", "lightcyan", "thistle", "khaki"];
     function addItem(){
         let task = document.createElement('div');
@@ -35,6 +36,7 @@
         let checkbox = document.getElementById("check" + task.id);
         checkbox.onclick = function(){
             if(confirm('have you completed the task?')){
+                addToCompleted(task.id);
                 removeElement(task.id);
                 completed++;
             }
@@ -47,6 +49,15 @@
         task.remove();
         shiftTasksUpward(parseInt(task.id, 10) + 1);
         pos = pos - 170;
+    }
+
+    function addToCompleted(id){
+        let task = document.getElementById(id);
+        let completed_task = document.createElement('div');
+        completed_task.innerText = "- "  + task.innerText;
+        completed_task.style.cssText = "top:" + completed_pos + "px;right:200px";
+        document.body.appendChild(completed_task);
+        completed_pos = completed_pos + 170;
     }
         
     //when removing a task, all the tasks below it will get shifted upward
