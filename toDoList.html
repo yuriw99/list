@@ -46,14 +46,13 @@
         
     //when removing a task, all the tasks below it will get shifted upward
     function shiftTasksUpward(id){
-        let int_id = id;
-        let below_task_id = id.toString();
-        let below_task = document.getElementById(below_task_id);
-        if(below_task){
-            let curr_top = parseInt(below_task.style.top, 10);
-            below_task.style.top = (curr_top - 170).toString() + "px" ; 
-            int_id ++;
-            shiftTasksUpward(int_id);
+        for (let i=id; i<=curr_id; i++) {
+            let below_task_id = i.toString();
+            let below_task = document.getElementById(below_task_id);
+            if(below_task){
+                let curr_top = parseInt(below_task.style.top, 10);
+                below_task.style.top = (curr_top - 170).toString() + "px" ; 
+            }
         }
     }
 
