@@ -3,6 +3,17 @@
 <head>
 <title>toDoList</title>
 </head>
+<style>
+    div{
+        font-family:verdana;
+        width: 500px; 
+        height: 150px;
+        text-align: center; 
+        position: absolute; 
+        vertical-align: middle;
+        line-height: 90px;
+    }
+</style>
 <script>
     let curr_id = 0;
     let pos = 50;
@@ -10,7 +21,7 @@
     function addItem(){
         let task = document.createElement('div');
         let task_value = document.getElementById("taskName").value;
-        task.style.cssText="font-family:verdana;width: 500px; height: 150px; background-color:" + colors[curr_id % 8]+"; text-align: center; position: absolute; vertical-align: middle;line-height: 90px;";
+        task.style.cssText=" background-color:" + colors[curr_id % 8]+";";
         task.style.cssText+="top: " + pos.toString() + "px";
         task.id=curr_id.toString();
         task.innerHTML=task_value;
