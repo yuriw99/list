@@ -25,10 +25,17 @@
         task.style.cssText+="top: " + pos.toString() + "px";
         task.id=curr_id.toString();
         task.innerHTML=task_value;
+        task.ondblclick = function (){
+            if(confirm("are you sure you want to remove task?")){
+                task.remove();
+            }
+        };
         document.body.appendChild(task);
         curr_id = curr_id + 1;
         pos = pos + 170;
     }
+
+
 </script>
 <body>
     <h2>My To-Do List</h2>
