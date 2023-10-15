@@ -17,6 +17,7 @@
 <script>
     let curr_id = 0;
     let pos = 50;
+    let completed = 0;
     let colors = ["lightgreen", "lightblue", "lavender", "lightpink", "lemonchiffon", "lightcyan", "thistle", "khaki"];
     function addItem(){
         let task = document.createElement('div');
@@ -26,7 +27,7 @@
         task.id=curr_id.toString();
         task.innerHTML=task_value + "<input type='checkbox' id = 'check" + task.id +
         "'style='position:absolute; top:10px; right:10px;width:20px;height:20px'" +
-            "onclick = function(){if(confirm('have you completed the task?')){removeElement(task.id);}};></input>";
+            "onclick = function(){if(confirm('have you completed the task?')){removeElement(task.id);completed++;}};></input>";
        
         task.ondblclick = function (){
             if(confirm("are you sure you want to remove task?")){
@@ -59,7 +60,7 @@
 
 </script>
 <body>
-    <h2>My To-Do List</h2>
+   <h2 >My To-Do List</h2> <p style="position:absolute;top:10px;right:30%;font-family:verdana">Completed</p>
     <img src="plus.png" onclick="addItem()" style="width:50px; position:fixed; bottom:20px; right:20px">
     <textarea id="taskName"style="height:70px;width:200px;position:fixed; bottom:20px; right:80px;"placeholder="enter task"></textarea>
 </body>
