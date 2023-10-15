@@ -28,11 +28,25 @@
         task.ondblclick = function (){
             if(confirm("are you sure you want to remove task?")){
                 task.remove();
+                shiftTasksUpward(parseInt(task.id, 10) + 1);
+                pos = pos - 170;
             }
         };
         document.body.appendChild(task);
         curr_id = curr_id + 1;
         pos = pos + 170;
+    }
+    //when removing a task, all the tasks below it will get shifted upward
+    function shiftTasksUpward(id){
+        let int_id = id;
+        let below_task_id = id.toString();
+        let below_task = document.getElementById(below_task_id);
+        if(below_task){
+            let curr_top = parseInt(below_task.style.top, 10);
+            below_task.style.top = (curr_top - 170).toString() + "px" ; 
+            int_id ++;
+            shiftTasksUpward(int_id);
+        }
     }
 
 
