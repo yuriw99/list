@@ -13,6 +13,26 @@
         vertical-align: middle;
         line-height: 90px;
     }
+    .animated {
+            background-image: "point_down.gif";
+            background-repeat: no-repeat;
+            -webkit-animation-duration: 10s;animation-duration: 10s;
+            -webkit-animation-fill-mode: both;animation-fill-mode: both;
+         }
+
+         @-webkit-keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+         }
+
+         @keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+         }
+         .fadeOut {
+            -webkit-animation-name: fadeOut;
+            animation-name: fadeOut;
+         }
 </style>
 <script>
     let curr_id = 0;
@@ -75,6 +95,7 @@
 </script>
 <body>
    <h2 >My To-Do List</h2> <p style="position:absolute;top:10px;right:30%;font-family:verdana">Completed</p>
+    <p style="position:fixed; bottom:120px;right:150px" class="animated fadeOut"></p>
     <img src="plus.png" onclick="addItem()" style="width:50px; position:fixed; bottom:20px; right:20px">
     <textarea id="taskName"style="height:70px;width:200px;position:fixed; bottom:20px; right:80px;"placeholder="enter task"></textarea>
 </body>
