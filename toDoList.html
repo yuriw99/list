@@ -29,6 +29,8 @@
     let completed = 0;
     let completed_pos = 50;
     let colors = ["lightgreen", "lightblue", "lavender", "lightpink", "lemonchiffon", "lightcyan", "thistle", "khaki"];
+    let priority = new Object(); //hashtable that pairs task priority with task id
+    
     function addItem(){
         let task = document.createElement('div');
         let task_value = document.getElementById("taskName").value;
@@ -40,6 +42,7 @@
                 removeElement(task.id);
             }
         };
+        priority[task.id] = curr_id; 
         document.body.appendChild(task);
         let checkbox = document.getElementById("check" + task.id);
         checkbox.onclick = function(){
@@ -91,6 +94,14 @@
                 pos +=170;
             }
         }
+    }
+
+    function updatePriorityUp(bottomid, topid){
+
+    }
+
+    function updatePriorityDown(bottomid, topid){
+
     }
 
 
