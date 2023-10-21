@@ -29,7 +29,6 @@
     let completed = 0;
     let completed_pos = 50;
     let colors = ["lightgreen", "lightblue", "lavender", "lightpink", "lemonchiffon", "lightcyan", "thistle", "khaki"];
-    let priority = [];
     function addItem(){
         let task = document.createElement('div');
         let task_value = document.getElementById("taskName").value;
@@ -78,6 +77,18 @@
                 let curr_top = parseInt(below_task.style.top, 10);
                 below_task.style.top = `${(curr_top - 170).toString()}px` ; 
             }
+        }
+    }
+
+    function reloadAllTasks(startid){
+        pos = 50 + startid * 170;
+        for (let i = startid; i < curr_id; i++){
+            let task_id = i.toString();
+            let task = document.getElementById(task_id);
+            if(task){
+                task.style.top = `${pos.toString()}px` ; 
+            }
+            pos +=170;
         }
     }
 
