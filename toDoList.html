@@ -96,10 +96,15 @@
         }
     }
 
+    //update priorities after dragging a task above its original position
+    //for example, if the ids of the tasks were originally 1-2-3-4-5-6, and become 1-6-2-3-4-5,
+    //the priorities of ids between (6,5] need to increase by 1
     function updatePriorityUp(bottomid, topid){
 
     }
-
+    //update priorities after dragging a task below its original position
+    //for example, if the ids of the tasks were originally 1-2-3-4-5-6, and become 1-3-4-5-2-6,
+    //the priorities of ids between [3,2) need to decrease by 1
     function updatePriorityDown(bottomid, topid){
 
     }
