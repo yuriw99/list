@@ -42,6 +42,7 @@
                 removeElement(task.id);
             }
         };
+        task.draggable = true;
         priority[task.id] = curr_id; 
         document.body.appendChild(task);
         let checkbox = document.getElementById("check" + task.id);
